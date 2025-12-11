@@ -1,4 +1,6 @@
-﻿string DecimalTo(int num, int dividend)
+﻿using System;
+
+string DecimalTo(int num, int dividend)
 {
     string result = string.Empty;
 
@@ -20,13 +22,13 @@
 }
 string ToDecimal(int num, int system)
 {
-    string binary_str = new string(num.ToString().Reverse().ToArray());
+    string num_str = new string(num.ToString().Reverse().ToArray());
     //int summand = 1;
     int sum = 0;
 
-    for (int i = 0; i < binary_str.Length; i++)
+    for (int i = 0; i < num_str.Length; i++)
     {
-        sum += (int)Math.Pow(system, i) * (int)char.GetNumericValue(binary_str[i]);
+        sum += (int)Math.Pow(system, i) * (int)char.GetNumericValue(num_str[i]);
     }
 
     return sum.ToString();
@@ -49,7 +51,25 @@ string DecimalToHex(int num)
 
 string HexToDecimal(string hex)
 {
-    return ""; //do zaimplementowania
+    string hex_reversed = new string(hex.Reverse().ToArray());
+    //int summand = 1;
+    int sum = 0;
+
+    for (int i = 0; i < hex_reversed.Length; i++)
+    {
+        int hex_num = 0;
+        if (hex_reversed[i] >= 65 && hex_reversed[i] <= 90)
+        {
+            hex_num = hex_reversed[i] - 55;
+        }
+        else if (hex_reversed[i] >= 48 && hex_reversed[i] <= 57)
+        {
+            hex_num = (int)char.GetNumericValue(hex_reversed[i]);
+        }
+            sum += (int)Math.Pow(16, i) * hex_num;
+    }
+
+    return sum.ToString();
 }
 
 string BinToDecimal(int num)
@@ -63,10 +83,15 @@ string DecimalToBin(int num)
 }
 
 Console.WriteLine("Wybierz działanie: \n1.Binarny - Dziesiętny\n2.Dziesietny - Binarny\n3.Dziesiętny - Szesnastkowy\n4.Szesnastkowy - Dziesietny\n5.Dziesiętny - Ósemkowy\n6.Ósemkowy - Dziesiętny");
-if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 4)
+if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 7)
 {
     Console.WriteLine("Wpisz liczbe:");
-    if (int.TryParse(Console.ReadLine(), out int num))
+    string? input = Console.ReadLine();
+    if (choice == 4)
+    {
+        Console.WriteLine(HexToDecimal(input!));
+    }
+    else if (int.TryParse(input, out int num))
     {
         switch (choice)
         {
@@ -80,7 +105,7 @@ if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 4
                 Console.WriteLine(DecimalToHex(num));
                 break;
             case 4:
-                Console.WriteLine(HexToDecimal(""));
+                Console.WriteLine(HexToDecimal(input));
                 break;
             case 5:
                 Console.WriteLine(DecimalToOctal(num));

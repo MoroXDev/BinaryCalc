@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Przeliczanie_Binarki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab8f88440fddce471f5f980eccc4af72974475b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0cad2ea3e6a39476cd89ceb40c46ebde53c5c5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Przeliczanie_Binarki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Przeliczanie_Binarki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
