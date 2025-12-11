@@ -2,7 +2,7 @@
 {
     string result = string.Empty;
 
-    while (num != 0)
+    while (num > 0)
     {
         result += (num % dividend).ToString();
         num /= dividend;
@@ -47,24 +47,31 @@ string BinToDecimal(int num)
 //Console.WriteLine("result = " + ToDecimal(input, 2));
 
 Console.WriteLine("Wybierz działanie: \n1.Binarka do dziesiętnego\n2.Dziesiętny do szesnastkowego\n3.Dziesiętny do ósemkowego");
-int.TryParse(Console.ReadLine(), out int choice);
-Console.WriteLine("Wpisz liczbe:");
-if (int.TryParse(Console.ReadLine(), out int num))
+if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 4)
 {
-    switch (choice)
+    Console.WriteLine("Wpisz liczbe:");
+    if (int.TryParse(Console.ReadLine(), out int num))
     {
-        case 1:
-            Console.WriteLine(BinToDecimal(num));
-            break;
-        case 2:
-            Console.WriteLine(DecimalToHex(num));
-            break;
-        case 3:
-            Console.WriteLine(DecimalToOctal(num));
-            break;
-        default:
-            Console.WriteLine("Wpisałeś złą opcję");
-            break;
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine(BinToDecimal(num));
+                break;
+            case 2:
+                Console.WriteLine(DecimalToHex(num));
+                break;
+            case 3:
+                Console.WriteLine(DecimalToOctal(num));
+                break;
+            default:
+                Console.WriteLine("Wpisałeś złą opcję");
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Nie wpisałeś liczby");
+
     }
 }
 else

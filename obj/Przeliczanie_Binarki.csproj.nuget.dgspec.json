@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Uczen\\Desktop\\Przeliczanie_Binarki\\Przeliczanie_Binarki.csproj": {}
+    "C:\\Users\\Uczen\\Desktop\\przeliczanie_binarki2\\Przeliczanie_Binarki.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Uczen\\Desktop\\Przeliczanie_Binarki\\Przeliczanie_Binarki.csproj": {
+    "C:\\Users\\Uczen\\Desktop\\przeliczanie_binarki2\\Przeliczanie_Binarki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Uczen\\Desktop\\Przeliczanie_Binarki\\Przeliczanie_Binarki.csproj",
+        "projectUniqueName": "C:\\Users\\Uczen\\Desktop\\przeliczanie_binarki2\\Przeliczanie_Binarki.csproj",
         "projectName": "Przeliczanie_Binarki",
-        "projectPath": "C:\\Users\\Uczen\\Desktop\\Przeliczanie_Binarki\\Przeliczanie_Binarki.csproj",
+        "projectPath": "C:\\Users\\Uczen\\Desktop\\przeliczanie_binarki2\\Przeliczanie_Binarki.csproj",
         "packagesPath": "C:\\Users\\Uczen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Uczen\\Desktop\\Przeliczanie_Binarki\\obj\\",
+        "outputPath": "C:\\Users\\Uczen\\Desktop\\przeliczanie_binarki2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
