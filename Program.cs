@@ -18,17 +18,6 @@
     result = new string(result.Reverse().ToArray());
     return result;
 }
-
-string DecimalToOctal(int num)
-{
-    return DecimalTo(num, 8);
-}
-
-string DecimalToHex(int num)
-{
-    return DecimalTo(num, 16);
-}
-
 string ToDecimal(int num, int system)
 {
     string binary_str = new string(num.ToString().Reverse().ToArray());
@@ -43,17 +32,37 @@ string ToDecimal(int num, int system)
     return sum.ToString();
 }
 
+string DecimalToOctal(int num)
+{
+    return DecimalTo(num, 8);
+}
+
+string OctalToDecimal(int num)
+{
+    return ToDecimal(num, 8);
+}
+
+string DecimalToHex(int num)
+{
+    return DecimalTo(num, 16);
+}
+
+string HexToDecimal(string hex)
+{
+    return ""; //do zaimplementowania
+}
+
 string BinToDecimal(int num)
 {
     return ToDecimal(num, 2);
 }
 
-//Console.WriteLine("wpisz liczbe");
-//int.TryParse(Console.ReadLine(), out int input);
+string DecimalToBin(int num)
+{
+    return DecimalTo(num, 2);
+}
 
-//Console.WriteLine("result = " + ToDecimal(input, 2));
-
-Console.WriteLine("Wybierz działanie: \n1.Binarka do dziesiętnego\n2.Dziesiętny do szesnastkowego\n3.Dziesiętny do ósemkowego");
+Console.WriteLine("Wybierz działanie: \n1.Binarny - Dziesiętny\n2.Dziesietny - Binarny\n3.Dziesiętny - Szesnastkowy\n4.Szesnastkowy - Dziesietny\n5.Dziesiętny - Ósemkowy\n6.Ósemkowy - Dziesiętny");
 if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 4)
 {
     Console.WriteLine("Wpisz liczbe:");
@@ -65,10 +74,19 @@ if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice < 4
                 Console.WriteLine(BinToDecimal(num));
                 break;
             case 2:
-                Console.WriteLine(DecimalToHex(num));
+                Console.WriteLine(DecimalToBin(num));
                 break;
             case 3:
+                Console.WriteLine(DecimalToHex(num));
+                break;
+            case 4:
+                Console.WriteLine(HexToDecimal(""));
+                break;
+            case 5:
                 Console.WriteLine(DecimalToOctal(num));
+                break;
+            case 6:
+                Console.WriteLine(OctalToDecimal(num));
                 break;
             default:
                 Console.WriteLine("Wpisałeś złą opcję");
