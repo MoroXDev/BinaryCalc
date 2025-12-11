@@ -27,11 +27,10 @@
                 case "15":
                     result_ch = "F";
                     break;
-
             }
+        }
             result += result_ch;
             num /= dividend;
-        }
 
         result = new string(result.Reverse().ToArray());
         return result;
